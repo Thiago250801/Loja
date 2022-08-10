@@ -1,0 +1,27 @@
+<div class="mt-5">
+  <h1 class="text-center">Produtos</h1>
+
+<div class="container">
+  <div class="header">
+  </div>
+  <div class="content">
+    <div class="list">
+      <div class="list-header">
+        <h3>Lista de produtos</h3>
+        <button mat-raised-button color="primary" (click)="open()">
+          Adicionar produto
+        </button>
+      </div>
+
+    <app-produtos [produto$]="allProduto$"
+                  (produtoEmmiter)="selectProduto($event)"></app-produtos>
+    </div>
+  <app-detalhe [produto]="selectedProduto"
+  *ngIf="selectedProduto"
+  (deleteProduto)="deleteProduto()"
+  (updateProduto)="updateProduto()">
+  </app-detalhe>
+  </div>
+</div>
+
+</div>

@@ -1,0 +1,16 @@
+<div class="detail">
+  <h2>{{ produto.nome}}</h2>
+  <h4>Categoria:{{ produto.categoria }} </h4>
+  <div class="content">
+    <div>
+      <p>Preço: {{ produto.preco }}</p>
+      <p>
+        Descrição: {{ produto.descricao }}
+      </p>
+    </div>
+  </div>
+  <div>
+    <button (click)="update()" mat-raised-button color="primary">Editar</button>
+    <button (click)="delete()" mat-raised-button color="warn">Deletar</button>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<form [formGroup]="form">
+  <mat-form-field>
+    <mat-label>Nome</mat-label>
+    <input required formControlName="nome" class="form-control" placeholder="Nome" type="text" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Categoria</mat-label>
+    <input required formControlName="categoria" class="form-control" placeholder="Categoria" type="text" matInput>
+  </mat-form-field>
+  <mat-form-field>
+  <mat-label>Descrição</mat-label>
+  <input required formControlName="descricao" class="form-control" placeholder="Descrição" type="text" matInput>
+</mat-form-field>
+  <mat-form-field>
+  <mat-label>Preço</mat-label>
+  <input required formControlName="preco" class="form-control" placeholder="Preço" type="text" matInput>
+</mat-form-field>
+  <button type="button" mat-raised-button (click)="submit()" color="primary" [disabled] ="!form.valid">Adicionar</button>
+</form>
