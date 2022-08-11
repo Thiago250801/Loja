@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
 
+## About
+
+This project simulates a store, using CRUD to manage the product
+
+## Technologies
+
+This project uses the `Angular CLi(14.1.1)` as FrontEnd and integrates with `Firebase` as Backend.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
