@@ -8,6 +8,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ProdutosComponent} from "./components/produtos/produtos.component";
 import {MaterialAngular} from "../../shared/material-angular.module";
 import { DetalheComponent } from './components/detalhe/detalhe.component';
+import { HistoricoCompraComponent } from './components/historico-compra/historico-compra.component';
+import { ComprarComponent } from './components/comprar/comprar.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { DetalheComponent } from './components/detalhe/detalhe.component';
     ProdutoComponent,
     FormComponent,
     ProdutosComponent,
-    DetalheComponent
+    DetalheComponent,
+    HistoricoCompraComponent,
+    ComprarComponent
   ],
     imports: [
         CommonModule,

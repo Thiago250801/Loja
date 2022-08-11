@@ -4,6 +4,7 @@ import {FormComponent} from "./components/form/form.component";
 import {filter, Observable, Subject, takeUntil, tap} from "rxjs";
 import {Produto} from "./interfaces/produto.interface";
 import {LojaFirestoreService} from "../../core/loja-firestore.service";
+import {ComprarComponent} from "./components/comprar/comprar.component";
 @Component({
   selector: 'app-produto',
   templateUrl: './produto.component.html',
@@ -50,6 +51,20 @@ export class ProdutoComponent implements OnInit {
   }
   selectProduto(produto : Produto){
     this.selectedProduto = produto
+  }
+
+  comprarProduto(){
+    const dialogRef = this.dialog.open(ComprarComponent, {
+      data:{...this.selectedProduto},
+      width: '540px',
+    })
+    dialogRef.afterClosed().pipe(
+      filter(Boolean),
+      tap((produto) => this.service.get(produto)),
+      takeUntil(this.destroyed$)
+    )
+      .subscribe()
+
   }
 
   deleteProduto(){

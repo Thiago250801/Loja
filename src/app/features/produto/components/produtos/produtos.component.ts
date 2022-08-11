@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { Observable } from 'rxjs';
 import {Produto} from "../../interfaces/produto.interface";
+import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
   selector: 'app-produtos',
@@ -18,4 +19,5 @@ export class ProdutosComponent implements OnInit {
   selectProduto(produto : Produto){
     this.produtoEmmiter.emit(produto)
   }
+
 }

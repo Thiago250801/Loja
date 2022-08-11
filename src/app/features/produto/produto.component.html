@@ -1,15 +1,13 @@
-<div class="mt-5">
-  <h1 class="text-center">Produtos</h1>
 
 <div class="container">
-  <div class="header">
+  <div class="header d-flex">
   </div>
   <div class="content">
     <div class="list">
       <div class="list-header">
-        <h3>Lista de produtos</h3>
+        <strong><h1 style="color: crimson">Lista de produtos</h1></strong>
         <button mat-raised-button color="primary" (click)="open()">
-          Adicionar produto
+          Adicionar
         </button>
       </div>
 
@@ -19,9 +17,9 @@
   <app-detalhe [produto]="selectedProduto"
   *ngIf="selectedProduto"
   (deleteProduto)="deleteProduto()"
-  (updateProduto)="updateProduto()">
+  (updateProduto)="updateProduto()"
+  (comprarProduto)="comprarProduto()">
   </app-detalhe>
   </div>
-</div>
 
-</div>
+ </div>

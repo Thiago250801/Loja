@@ -8,14 +8,10 @@
       <mat-card-subtitle class="text-uppercase">Categoria: {{ produto.categoria }} </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <p>
-        Descrição:
-        {{ produto.descricao}}
-      </p>
-      <br>
+
       <p>
         Preço:
-        {{produto.preco}}
+        {{produto.preco | currency: 'R$'}}
       </p>
     </mat-card-content>
   </mat-card>
