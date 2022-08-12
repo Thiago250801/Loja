@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {FormComponent} from "./components/form/form.component";
-import {filter, Observable, Subject, takeUntil, tap} from "rxjs";
+import {filter, Observable, pipe, Subject, takeUntil, tap} from "rxjs";
 import {Produto} from "./interfaces/produto.interface";
 import {LojaFirestoreService} from "../../core/loja-firestore.service";
 import {ComprarComponent} from "./components/comprar/comprar.component";
+import {Router} from "@angular/router";
 @Component({
   selector: 'app-produto',
   templateUrl: './produto.component.html',
@@ -17,7 +18,8 @@ export class ProdutoComponent implements OnInit {
 
   constructor(
     private readonly dialog : MatDialog,
-    private readonly service: LojaFirestoreService
+    private readonly service: LojaFirestoreService,
+    private readonly router: Router
   ) { }
 
   ngOnInit(): void {
@@ -64,6 +66,11 @@ export class ProdutoComponent implements OnInit {
       takeUntil(this.destroyed$)
     )
       .subscribe()
+
+  }
+
+  acceptProduto(){
+
 
   }
 

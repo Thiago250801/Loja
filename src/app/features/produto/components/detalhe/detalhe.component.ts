@@ -16,7 +16,6 @@ export class DetalheComponent implements OnInit{
   @Output() comprarProduto = new EventEmitter<void>()
 
   constructor(
-    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
