@@ -26,6 +26,6 @@ export class ComprarComponent implements OnInit {
 
 
   aceppt() {
-
+    this.router.navigate(['/historico-compra'])
   }
 }

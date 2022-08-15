@@ -33,6 +33,6 @@ export class DetalheComponent implements OnInit{
   }
 
   comprar() {
-
+    this.comprarProduto.emit()
   }
 }

@@ -11,7 +11,8 @@ import { DetalheComponent } from './components/detalhe/detalhe.component';
 import { ComprarComponent } from './components/comprar/comprar.component';
 import {registerLocaleData} from "@angular/common";
 import {LOCALE_ID, DEFAULT_CURRENCY_CODE} from "@angular/core";
-import localePt from '@angular/common/locales/pt'
+import localePt from '@angular/common/locales/pt';
+import { HistoricoCompraComponent } from './components/historico-compra/historico-compra.component'
 
 registerLocaleData(localePt, 'pt')
 @NgModule({
@@ -20,7 +21,8 @@ registerLocaleData(localePt, 'pt')
     FormComponent,
     ProdutosComponent,
     DetalheComponent,
-    ComprarComponent
+    ComprarComponent,
+    HistoricoCompraComponent
   ],
     imports: [
         CommonModule,

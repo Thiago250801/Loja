@@ -6,6 +6,7 @@ import {Produto} from "./interfaces/produto.interface";
 import {LojaFirestoreService} from "../../core/loja-firestore.service";
 import {ComprarComponent} from "./components/comprar/comprar.component";
 import {Router} from "@angular/router";
+import {CompraInterface} from "./interfaces/compra.interface";
 @Component({
   selector: 'app-produto',
   templateUrl: './produto.component.html',
