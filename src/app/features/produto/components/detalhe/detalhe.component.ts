@@ -1,8 +1,9 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {Produto} from "../../interfaces/produto.interface";
-import {Router} from "@angular/router";
-import {MatDialog} from "@angular/material/dialog";
-import {ComprarComponent} from "../comprar/comprar.component";
+import {CompraInterface} from "../../interfaces/compra.interface";
+import firebase from "firebase/compat";
+import Timestamp = firebase.firestore.Timestamp;
+import {LojaFirestoreService} from "../../../../core/loja-firestore.service";
 
 @Component({
   selector: 'app-detalhe',
@@ -14,8 +15,10 @@ export class DetalheComponent implements OnInit{
   @Output() updateProduto = new EventEmitter<void>();
   @Output() deleteProduto = new EventEmitter<void>();
   @Output() comprarProduto = new EventEmitter<void>()
+  compra: CompraInterface;
 
   constructor(
+    private servive : LojaFirestoreService
   ) { }
 
   ngOnInit(): void {
@@ -30,7 +33,6 @@ export class DetalheComponent implements OnInit{
   }
 
   comprar() {
-    this.comprarProduto.emit()
 
   }
 }
