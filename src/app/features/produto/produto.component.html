@@ -1,29 +1,20 @@
 
-<div class="container">
-  <div class="header d-flex">
+  <div class="mx-2 mt-4">
+  <button type="button" class="btn btn-primary" (click)="open()">Adicionar</button>
   </div>
-  <div class="content">
-    <div class="list">
-      <div class="list-header">
-        <strong><h1 style="color: crimson">Lista de produtos</h1></strong>
-        <button mat-raised-button color="primary" (click)="open()">
-          Adicionar
-        </button>
-      </div>
 
-
-
+<div class="row">
+<div class="col-xxl-12 col-md-12 col-12">
     <app-produtos [produto$]="allProduto$"
                   (produtoEmmiter)="selectProduto($event)"></app-produtos>
-    </div>
+</div>
+<div class="">
   <app-detalhe [produto]="selectedProduto"
   *ngIf="selectedProduto"
   (deleteProduto)="deleteProduto()"
   (updateProduto)="updateProduto()"
-  (comprarProduto)="comprarProduto()">
+ >
   </app-detalhe>
 
-  </div>
-
- </div>
-
+</div>
+</div>

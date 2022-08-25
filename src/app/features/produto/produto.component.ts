@@ -4,9 +4,9 @@ import {FormComponent} from "./components/form/form.component";
 import {filter, Observable, pipe, Subject, takeUntil, tap} from "rxjs";
 import {Produto} from "./interfaces/produto.interface";
 import {LojaFirestoreService} from "../../core/loja-firestore.service";
-import {ComprarComponent} from "./components/comprar/comprar.component";
 import {Router} from "@angular/router";
 import {CompraInterface} from "./interfaces/compra.interface";
+import {DetalheComponent} from "./components/detalhe/detalhe.component";
 @Component({
   selector: 'app-produto',
   templateUrl: './produto.component.html',
@@ -56,23 +56,17 @@ export class ProdutoComponent implements OnInit {
     this.selectedProduto = produto
   }
 
-  comprarProduto(){
-    const dialogRef = this.dialog.open(ComprarComponent, {
+  slctProduto(){
+    const dialogRef = this.dialog.open(DetalheComponent, {
       data:{...this.selectedProduto},
       width: '540px',
     })
     dialogRef.afterClosed().pipe(
       filter(Boolean),
-      tap((produto) => this.service.get(produto)),
+      tap((produto) => this.selectProduto(produto)),
       takeUntil(this.destroyed$)
     )
       .subscribe()
-
-  }
-
-  acceptProduto(){
-
-
   }
 
   deleteProduto(){

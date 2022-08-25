@@ -1,18 +1,29 @@
-<div class="card-container">
-  <mat-card
-    *ngFor="let produto of produto$ | async"
-    (click)="selectProduto(produto)"
-  >
-    <mat-card-header>
-      <mat-card-title class="text-uppercase">{{ produto.nome }}</mat-card-title>
-      <mat-card-subtitle class="text-uppercase">Categoria: {{ produto.categoria }} </mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
+<!--<div class="card-container">-->
+<!--  <mat-card-->
+<!--    *ngFor="let produto of produto$ | async"-->
+<!--    (click)="selectProduto(produto)"-->
+<!--  >-->
+<!--    <mat-card-header>-->
+<!--      <mat-card-title class="text-uppercase">{{ produto.nome }}</mat-card-title>-->
+<!--      <mat-card-subtitle class="text-uppercase">Categoria: {{ produto.categoria }} </mat-card-subtitle>-->
+<!--    </mat-card-header>-->
+<!--    <mat-card-content>-->
 
-      <p>
-        Preço:
-        {{produto.preco | currency}}
-      </p>
-    </mat-card-content>
-  </mat-card>
+<!--      <p>-->
+<!--        Preço:-->
+<!--        {{produto.preco | currency}}-->
+<!--      </p>-->
+<!--    </mat-card-content>-->
+<!--  </mat-card>-->
+<!--</div>-->
+<div class="container-fluid">
+<div class="row">
+  <div  class="shadow  mx-2 my-2 bg-white rounded-lg card justify-content-between col-xxl-2 col-md-3"  *ngFor="let produto of produto$ | async" (click)="selectProduto(produto)">
+    <div class="card-body">
+      <h3 class="text-uppercase card-title">{{produto.nome}}</h3>
+      <h4 class="text-uppercase card-subtitle text-muted" >Categoria: {{produto.categoria}}</h4>
+      <p class="card-text text-uppercase text-success"> Preço: {{produto.preco | currency}}</p>
+    </div>
+  </div>
+</div>
 </div>

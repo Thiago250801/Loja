@@ -10,7 +10,9 @@ import {MatTableDataSource} from "@angular/material/table";
 })
 export class ProdutosComponent implements OnInit {
   @Input() produto$: Observable<Produto[]>
+  @Input() index: number;
   @Output() produtoEmmiter = new EventEmitter<Produto>()
+
   constructor() { }
 
   ngOnInit(): void {
