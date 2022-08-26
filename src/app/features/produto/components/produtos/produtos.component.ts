@@ -11,6 +11,7 @@ import {MatTableDataSource} from "@angular/material/table";
 export class ProdutosComponent implements OnInit {
   @Input() produto$: Observable<Produto[]>
   @Input() index: number;
+  @Output() slct = new EventEmitter<Produto>();
   @Output() produtoEmmiter = new EventEmitter<Produto>()
 
   constructor() { }
@@ -19,7 +20,8 @@ export class ProdutosComponent implements OnInit {
   }
 
   selectProduto(produto : Produto){
-    this.produtoEmmiter.emit(produto)
+    this.slct.emit(produto)
+
   }
 
 }

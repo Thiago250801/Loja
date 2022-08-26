@@ -32,7 +32,5 @@ export class DetalheComponent implements OnInit{
     this.deleteProduto.emit()
   }
 
-  comprar() {
-    this.comprarProduto.emit()
-  }
+
 }

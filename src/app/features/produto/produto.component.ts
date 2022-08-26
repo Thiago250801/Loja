@@ -59,7 +59,7 @@ export class ProdutoComponent implements OnInit {
   slctProduto(){
     const dialogRef = this.dialog.open(DetalheComponent, {
       data:{...this.selectedProduto},
-      width: '540px',
+      width: '1000px',
     })
     dialogRef.afterClosed().pipe(
       filter(Boolean),
