@@ -20,11 +20,11 @@ export class ProdutoComponent implements OnInit {
   constructor(
     private readonly dialog : MatDialog,
     private readonly service: LojaFirestoreService,
-    private readonly router: Router
   ) { }
 
   ngOnInit(): void {
     this.allProduto$ = this.service.getAll()
+
   }
 
   open() {
@@ -56,18 +56,7 @@ export class ProdutoComponent implements OnInit {
     this.selectedProduto = produto
   }
 
-  slctProduto(){
-    const dialogRef = this.dialog.open(DetalheComponent, {
-      data:{...this.selectedProduto},
-      width: '1000px',
-    })
-    dialogRef.afterClosed().pipe(
-      filter(Boolean),
-      tap((produto) => this.selectProduto(produto)),
-      takeUntil(this.destroyed$)
-    )
-      .subscribe()
-  }
+
 
   deleteProduto(){
     this.service.delete(this.selectedProduto!.id)
