@@ -8,7 +8,7 @@
     <app-produtos [produto$]="allProduto$"
                   (produtoEmmiter)="selectProduto($event)"
     ></app-produtos>
-  <app-detalhe [produto]="selectedProduto"
+  <app-detalhe #mod [produto]="selectedProduto"
                *ngIf="selectedProduto"
                (deleteProduto)="deleteProduto()"
                (updateProduto)="updateProduto()"

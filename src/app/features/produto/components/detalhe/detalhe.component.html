@@ -1,4 +1,5 @@
-<div class="">
+
+<div class="mod" @mod>
   <div class="d-flex row">
   <h2 class="text-uppercase">{{ produto.nome}}</h2>
   <h4 class="text-uppercase">Categoria:{{ produto.categoria }} </h4>
@@ -11,11 +12,12 @@
     </div>
   </div>
   <div>
-    <button (click)="update()" mat-raised-button color="primary">Editar</button>
+    <button (click)="update();" mat-raised-button color="primary">Editar</button>
     <button (click)="delete()" mat-raised-button color="warn">Deletar</button>
 
   </div>
   </div>
 </div>
-
-
+<div (click)="toggle()"
+     @overlay
+     class="overlay"></div>

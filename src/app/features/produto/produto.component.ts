@@ -51,6 +51,7 @@ export class ProdutoComponent implements OnInit {
       takeUntil(this.destroyed$)
     )
       .subscribe()
+
   }
   selectProduto(produto : Produto){
     this.selectedProduto = produto
